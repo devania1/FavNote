@@ -1,9 +1,32 @@
 import React from 'react'; //to create react components
-import ReactDom from 'react-dom';//render to html
+import ReactDOM from 'react-dom';//render to html
+
+const App = React.createElement (
+    'div',
+    {
+        className: 'wrapper',
+    },
+    [
+        React.createElement (
+            'h1',
+            {
+                className: 'mainHeader',
+            },
+            'Hello world!',
+        ),
+        React.createElement (
+            'h2',
+            {
+                className: 'secondaryHeader',
+            },
+            'Hello eduweb!',
+        )
+    ]
+);
 
 ReactDOM.render(
-    //rendered element
-    <h1>Hello world!</h1>,
+    //rendered element JSX
+    App,
     //target
     document.getElementById('root')
 );
