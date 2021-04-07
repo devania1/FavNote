@@ -1,5 +1,5 @@
-import React from 'react'; //to create react components
-import ReactDOM from 'react-dom';//render to html
+import React from 'react'; 
+import ReactDOM from 'react-dom';
 import App from './app';
 
 
