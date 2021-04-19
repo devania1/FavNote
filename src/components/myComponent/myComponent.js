@@ -5,14 +5,16 @@ class MyComponent extends React.Component {
         text: 'test state',
     }
     
-    handleChange = () => console.log('change');
+    handleChange = (event) => {
+        this.setState({ text: event.target.value.toUpperCase()});
+    }
     
     render() {
         return (
         <>
-            <input placeholder="your text"
-            onChange={this.handleChange} />
-            <h1>{this.state.text}</h1>
+            <input placeholder="Your text"
+            onChange={this.handleChange}
+            value={this.state.text}/>
         </>
         )
     }
