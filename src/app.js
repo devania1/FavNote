@@ -1,8 +1,9 @@
 import React from 'react';
 import ListWrapper from './components/ListWrapper/ListWrapper';
 import './index.css';
+import Form from './components/Form/Form.js'
 
-const initialStateArray = [
+const initialStateItems = [
 {
     image: 'https://www.laminerva.pl/wp-content/uploads/2016/04/czarny-kwadrat-na-bialym-tle.jpg',
     name: 'Dan Abramov',
@@ -31,7 +32,15 @@ const initialStateArray = [
 
 class App extends React.Component {
     state = {
-        items: [...initialStateArray],
+        items: [...initialStateItems],
+    }
+
+    addItem = (e) => {
+        e.preventDefault();
+        console.log(e.target[0].value);
+        console.log(e.target[1].value);
+        console.log(e.target[2].value);
+        console.log(e.target[3].value);
     }
 
     render() {
@@ -40,6 +49,7 @@ class App extends React.Component {
                 <ListWrapper 
                     items={this.state.items} 
                 />
+                <Form submitFn={this.addItem} />
             </div>
             )
     }  
