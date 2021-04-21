@@ -13,6 +13,7 @@ const ListItem = ({name, description, image, twitterLink}) => (
             <h2 className="listItem__name">{name}</h2>
             <p className="listItem__description">{description}</p>
             <a href={twitterLink} 
+               target="_blank"
                className="listItem__button">
                visit twitter page
             </a>
