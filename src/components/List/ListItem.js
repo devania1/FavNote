@@ -5,30 +5,33 @@ import Button from '../../Button/Button';
 import Title from '../../Title/Title';
 
 const ListItem = ({ image, name, description, twitterLink }) => {
+  const ImageTag = image ? "img" : "div";
 
-    const ImageTag = image ? 'img' : 'div';
-
-    return (  
+  return (  
     <li className={styles.wrapper}>
       <ImageTag 
         src={image} 
         className={image ? styles.image : styles.imageNone} 
         alt={name} 
-        />
+      />
       <div>
         <Title>{name}</Title>
         <p className={styles.description}>{description}</p>
-        <Button href={twitterLink}>Visit twitter page</Button>
-      </div>
-    </li>
-    )
+        <Button 
+          href={twitterLink}
+          >
+            Visit twitter page
+          </Button>
+        </div>
+      </li>
+    );
   };
 
 ListItem.propTypes = {
   image: PropTypes.string,
   name: PropTypes.string.isRequired,
   description: PropTypes.string,
-  twitterLink: PropTypes.string.isRequired
+  twitterLink: PropTypes.string.isRequired,
 };
 
 ListItem.defaultProps = {
