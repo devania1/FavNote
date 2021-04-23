@@ -1,7 +1,7 @@
 import React from 'react';
-import ListWrapper from './components/ListWrapper/ListWrapper';
+import ListWrapper from '../../components/List/List';
 import './index.css';
-import Form from './components/Form/Form.js'
+import Form from '../../components/Form/Form.js'
 
 const initialStateItems = [
 {
@@ -30,7 +30,7 @@ const initialStateItems = [
 }
 ];
 
-class App extends React.Component {
+class Root extends React.Component {
     state = {
         items: [...initialStateItems],
     }
@@ -64,4 +64,4 @@ class App extends React.Component {
     }  
 }
 
-export default App;
+export default Root;
