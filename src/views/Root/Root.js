@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ArticlesView from '../ArticlesView/ArticlesView';
 import TwittersView from '../TwittersView/TwittersView';
 import NotesView from '../NotesView/NotesView';
-import Navigation from '../../components/Navigation/Navigation';
+import Navigation from '../../components/Header/HeaderNavigation';
 
 const initialStateItems = [
 {
