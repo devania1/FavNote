@@ -1,6 +1,10 @@
+.wrapper {
+    margin-left: 100px;
+}
+
 .navItem {
     display: inline-block;
-    margin-right: 50px;
+    margin: 0 50px;
     list-style: none;
 
     &Link {

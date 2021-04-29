@@ -8,15 +8,15 @@ const HeaderNavigation = () => (
             <li className={styles.navItem}>
             <NavLink exact
             activeClassName={styles.navItemLinkActive} 
-            className={styles.navItemLink} to="/">Twitters</NavLink></li>
+            className={styles.navItemLink} to="/">twitters</NavLink></li>
             <li className={styles.navItem}>
             <NavLink
             activeClassName={styles.navItemLinkActive} 
-            className={styles.navItemLink} to="/articles">Articles</NavLink></li>
+            className={styles.navItemLink} to="/articles">articles</NavLink></li>
             <li className={styles.navItem}>
             <NavLink
             activeClassName={styles.navItemLinkActive} 
-            className={styles.navItemLink}to="/notes">Notes</NavLink></li>
+            className={styles.navItemLink}to="/notes">notes</NavLink></li>
         </ul>
     </nav>
 )
