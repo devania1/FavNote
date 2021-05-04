@@ -43,7 +43,7 @@ class Form extends React.Component {
           <div className={styles.formOptions}>
             <Radio
               id={types.twitter}
-              checked={this.state.activeOption === types.twitter} 
+              checked={activeOption === types.twitter} 
               changeFn={() => this.handleRadioButtonChange(types.twitter)}
               
             >
@@ -52,7 +52,7 @@ class Form extends React.Component {
 
             <Radio 
               id={types.article}
-              checked={this.state.activeOption === types.article} 
+              checked={activeOption === types.article} 
               changeFn={() => this.handleRadioButtonChange(types.article)}
             >
             Article
@@ -60,7 +60,7 @@ class Form extends React.Component {
 
             <Radio 
               id={types.note}
-              checked={this.state.activeOption === types.note} 
+              checked={activeOption === types.note} 
               changeFn={() => this.handleRadioButtonChange(types.note)}
             >
             Note
@@ -69,17 +69,19 @@ class Form extends React.Component {
 
         <Input
           name="name"
-          label="Name"
+          label={activeOption === types.twitter ? 'Twitter name' : 'Title'}
           maxLength={30}
         />
+
+        {activeOption !== types.note ? (
         <Input
           name="link"
-          label="Twitter link"
+          label={activeOption === types.twitter ? 'Twitter link' : 'Link'}
         />
-        <Input
-          name="image"
-          label="Image"
-        />
+        ) : null}
+        
+        {this.state.activeOption === types.twitter ? <Input name="image" label="Image" /> : null}
+        
         <Input
           tag="textarea"
           name="description"
