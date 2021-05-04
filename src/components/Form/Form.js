@@ -3,7 +3,7 @@ import styles from "./Form.module.scss";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Title from '../Title/Title';
-import Radio from "../Radio/Radio";
+import Radio from "./FormRadio";
 
 const types = {
   twitter: 'twitter',

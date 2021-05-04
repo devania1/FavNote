@@ -1,5 +1,5 @@
 import React, { Children } from 'react';
-import styles from './Radio.module.scss';
+import styles from './FormRadio.module.scss';
 
 
 const Radio = ({id, checked, changeFn, children}) => 
