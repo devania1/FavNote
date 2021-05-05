@@ -1,4 +1,5 @@
 import React from "react";
+import AppContext from "../../Contex";
 import styles from "./Form.module.scss";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
@@ -20,39 +21,56 @@ const descriptions = {
 
 class Form extends React.Component {
   state = {
-    activeOption: types.twitter,
+    type: types.twitter,
+    title: '',
+    link: '',
+    image: '',
+    description: '',
   };
 
   handleRadioButtonChange = type => {
     this.setState({
-      activeOption: type,
+      type: type,
     });
   };
 
+  handleInputChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+
+    console.log(`
+      title: ${this.state.title},
+      link: ${this.state.link},
+      image: ${this.state.image},
+      description: ${this.state.description},
+    `);
+  };
+
   render() {
-    const { activeOption } = this.state;
+    const { type } = this.state;
 
     return (
-      <div className={styles.wrapper}>
-        <Title>Add new {descriptions[activeOption]}</Title>
-        <form 
-          autoComplete="off" 
-          className={styles.form} 
-          onSubmit={this.props.submitFn}
-        >
+    <AppContext.Consumer>
+      {(context) => (
+        <div className={styles.wrapper}>
+            <Title>Add new {descriptions[type]}</Title>
+          <form 
+            autoComplete="off" 
+            className={styles.form} 
+            onSubmit={(e) => context.addItem(e, this.state)}
+          >
           <div className={styles.formOptions}>
             <Radio
-              id={types.twitter}
-              checked={activeOption === types.twitter} 
+            id={types.twitter}
+              checked={type === types.twitter} 
               changeFn={() => this.handleRadioButtonChange(types.twitter)}
-              
             >
             Twitter
             </Radio>
-
             <Radio 
               id={types.article}
-              checked={activeOption === types.article} 
+              checked={type === types.article} 
               changeFn={() => this.handleRadioButtonChange(types.article)}
             >
             Article
@@ -60,36 +78,38 @@ class Form extends React.Component {
 
             <Radio 
               id={types.note}
-              checked={activeOption === types.note} 
+              checked={type === types.note} 
               changeFn={() => this.handleRadioButtonChange(types.note)}
             >
             Note
             </Radio>
-        </div>
+          </div>
 
-        <Input
-          name="name"
-          label={activeOption === types.twitter ? 'Twitter name' : 'Title'}
-          maxLength={30}
-        />
+          <Input onChange={this.handleInputChange} value={this.state.title}
+            name="title"
+            label={type === types.twitter ? 'Twitter name' : 'Title'}
+            maxLength={30}
+          />
 
-        {activeOption !== types.note ? (
-        <Input
-          name="link"
-          label={activeOption === types.twitter ? 'Twitter link' : 'Link'}
-        />
-        ) : null}
-        
-        {this.state.activeOption === types.twitter ? <Input name="image" label="Image" /> : null}
-        
-        <Input
-          tag="textarea"
-          name="description"
-          label="Description"
-        />
-        <Button>Add new item</Button>
-      </form>
-    </div>
+          {type !== types.note ? (
+          <Input onChange={this.handleInputChange} value={this.state.link}
+            name="link"
+            label={type === types.twitter ? 'Twitter link' : 'Link'}
+          />
+          ) : null}
+          
+          {this.state.type === types.twitter ? <Input onChange={this.handleInputChange} value={this.state.image} name="image" label="Image" /> : null}
+          
+          <Input onChange={this.handleInputChange} value={this.state.description}
+            tag="textarea"
+            name="description"
+            label="Description"
+          />
+          <Button>Add new item</Button>
+        </form>
+      </div>
+      )}
+    </AppContext.Consumer>
     )
   }
 };

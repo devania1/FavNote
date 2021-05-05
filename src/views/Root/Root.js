@@ -9,55 +9,23 @@ import Header from '../../components/Header/Header';
 import Modal from '../../components/Modal/Modal';
 
 
-const initialStateItems = [
-{
-    image: 'https://www.laminerva.pl/wp-content/uploads/2016/04/czarny-kwadrat-na-bialym-tle.jpg',
-    name: 'Dan Abramov',
-    // description: 'Working on @reactjs. The demo guy.',
-    twitterLink: 'https://twitter.com/dan_abramov',
-},
-{
-    image: 'https://www.laminerva.pl/wp-content/uploads/2016/04/czarny-kwadrat-na-bialym-tle.jpg',
-    name: 'Ryan Florence',
-    description: 'Making React accessible for users and developers at https://reach.tech . Online learning, workshops, OSS, and consulting.',
-    twitterLink: 'https://twitter.com/ryanflorence',
-},
-{
-    image: 'https://www.laminerva.pl/wp-content/uploads/2016/04/czarny-kwadrat-na-bialym-tle.jpg',
-    name: 'Michael Jackson',
-    description: 'Maker. Co-author of React Router. Working on @ReactTraining. Created @unpkg. Head over heels for @cari.',
-    twitterLink: 'https://twitter.com/mjackson',
-},
-{
-    image: 'https://www.laminerva.pl/wp-content/uploads/2016/04/czarny-kwadrat-na-bialym-tle.jpg',
-    name: 'Kent C. Dodds',
-    description: 'Making software development more accessible · Husband, Father, Latter-day Saint, Teacher, OSS, GDE, @TC39 · @PayPalEng @eggheadio @FrontendMasters · #JS',
-    twitterLink: 'https://twitter.com/kentcdodds',
-}
-];
-
 class Root extends React.Component {
     state = {
-        items: [...initialStateItems],
+        twitter: [],
+        article: [],
+        note: [],
         isModalOpen: true,
-        name: "Ania",
     };
 
-    addItem = (e) => {
+    addItem = (e, newItem) => {
         e.preventDefault();
 
-        const newItem = {
-            name: e.target[0].value,
-            twitterLink:e.target[1].value,
-            image: e.target[2].value,
-            description: e.target[3].value,
-        }
-
         this.setState(prevState => ({
-            items: [...prevState.items, newItem],
+            [newItem.type]: [...prevState[newItem.type], newItem]
         }));
 
-        e.target.reset();
+        this.closeModal();
+
     }
 
     openModal = () => {
@@ -74,10 +42,14 @@ class Root extends React.Component {
 
     render() {
         const { isModalOpen } = this.state;
+        const contextElements = {
+            ...this.state,
+            addItem: this.addItem,
+        }
 
         return (
             <BrowserRouter>
-                <AppContext.Provider value={this.state.name}>
+                <AppContext.Provider value={contextElements}>
                     <>
                     <Header openModalFn={this.openModal} />
                     <h1>Hello world!</h1>
@@ -95,3 +67,8 @@ class Root extends React.Component {
 }
 
 export default Root;
+
+
+
+//4. przystosować widoki podstron do nowych itemów
+//5. wyświetlać odpowienie notatki na podstronach
