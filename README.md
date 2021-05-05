@@ -1,2 +1,2 @@
 My first App in React,
-using create-react-app, website [http://localhost:3000]
+using create-react-app.
