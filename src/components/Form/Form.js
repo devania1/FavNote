@@ -38,13 +38,6 @@ class Form extends React.Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-
-    console.log(`
-      title: ${this.state.title},
-      link: ${this.state.link},
-      image: ${this.state.image},
-      description: ${this.state.description},
-    `);
   };
 
   render() {
@@ -88,7 +81,6 @@ class Form extends React.Component {
           <Input onChange={this.handleInputChange} value={this.state.title}
             name="title"
             label={type === types.twitter ? 'Twitter name' : 'Title'}
-            maxLength={30}
           />
 
           {type !== types.note ? (
