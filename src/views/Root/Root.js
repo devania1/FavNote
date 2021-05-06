@@ -14,7 +14,7 @@ class Root extends React.Component {
         twitter: [],
         article: [],
         note: [],
-        isModalOpen: true,
+        isModalOpen: false,
     };
 
     addItem = (e, newItem) => {
@@ -52,7 +52,6 @@ class Root extends React.Component {
                 <AppContext.Provider value={contextElements}>
                     <>
                     <Header openModalFn={this.openModal} />
-                    <h1>Hello world!</h1>
                     <Switch>
                     <Route exact path="/" component={TwittersView} />
                     <Route path="/articles" component={ArticlesView} />
@@ -67,8 +66,3 @@ class Root extends React.Component {
 }
 
 export default Root;
-
-
-
-//4. przystosować widoki podstron do nowych itemów
-//5. wyświetlać odpowienie notatki na podstronach
