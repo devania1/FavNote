@@ -18,6 +18,8 @@ Also to do something interactive and fun.
 ## Screenshots
 ![Example screenshot](./src/assets/images/favnote1.png)
 ![Example screenshot](./src/assets/images/favnote2.png)
+![Example screenshot](./src/assets/images/favnote3.png)
+![Example screenshot](./src/assets/images/favnote4.png)
 
 ## Technologies
 * HTML5
