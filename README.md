@@ -24,6 +24,8 @@ Also to do something interactive and fun.
 * CSS3/SASS
 * JavaScript (ES6)
 * React.js - version 17.0.2
+* Webpack, Yarn
+* Netlify
 
 ## Setup
 link to netlify
