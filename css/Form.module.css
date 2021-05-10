@@ -1,6 +1,5 @@
 .wrapper {
-  width: 50%;
-  margin: 50px auto 100px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,13 +7,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.wrapper h2 {
-  color: #1E58FF;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .form {
@@ -35,71 +30,7 @@
           align-items: flex-start;
 }
 
-.formItem {
-  width: 100%;
-  margin: 24px 0;
-  position: relative;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
-.forms__item__bar {
-  width: 100%;
-  height: 2px;
-  background: #7d7d7d;
-  -webkit-transition: .1s all;
-  transition: .1s all;
-}
-
-label {
-  color: #7d7d7d;
-  position: absolute;
-  top: 3px;
-  left: 0;
-  -webkit-transition: .2s ease-out all;
-  transition: .2s ease-out all;
-  font-size: 16px;
-}
-
-input, textarea {
-  color: #7d7d7d;
-  font-size: 16px;
-  border: none;
-  line-height: 22px;
-  width: 100%;
-  background: none;
-}
-
-textarea {
-  resize: none;
-  min-height: 150px;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-}
-
-input:focus + label, textarea:focus + label {
-  top: -22px;
-  font-size: 13px;
-}
-
-input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label {
-  top: -22px;
-  font-size: 13px;
-}
-
-input:focus ~ .forms__item__bar, textarea:focus ~ .forms__item__bar {
-  background: #1E58FF;
-}
-
-.form__button {
-  font-size: 10px;
-  text-decoration: none;
-  padding: 7px 12px;
-  font-weight: 500;
-  background: none;
-  border: 2px solid #1E58FF;
-  color: #1E58FF;
+.form button {
+  margin-top: 50px;
 }
 /*# sourceMappingURL=Form.module.css.map */
