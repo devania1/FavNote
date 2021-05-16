@@ -1,7 +1,6 @@
 # FavNote App
 
 FavNote is simple, interactive web application with use React.js. library. 
-The Motivation to create the App project was to learn React library, also to do something interactive for fun.
 
 ## Table of contents
 * [General info](#general-info)
@@ -12,8 +11,7 @@ The Motivation to create the App project was to learn React library, also to do 
 
 ## General info
 
-FavNote allows the user add new items by form and create list of twitters, articles and notes. 
-Application can be developed by add new features (e.g. remove notes), add form validation and create Redux store.
+The Motivation to create the App project was to learn React library, also to do something interactive for fun. FavNote allows the user add new items by form and create list of twitters, articles and notes. Application can be developed by add new features (e.g. remove notes), add form validation and create Redux store.
 
 
 ## Screenshots
