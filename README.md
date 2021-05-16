@@ -1,6 +1,6 @@
 # FavNote App
 
-FavNote is simple, interactive web application with use React.js. library. 
+FavNote is interactive web application with use React.js. library. 
 
 ## Table of contents
 * [General info](#general-info)
